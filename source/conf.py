@@ -10,19 +10,22 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+
+from tm_config import tmconfig
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'Travail de maturité (modifier dans le fichier conf.py'
-author = 'Nom, Prénom, classe (modifier dans le fichier conf.py)'
+project = tmconfig.title
+author = tmconfig.author
 copyright = f'2021, {author}'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1 (modifier dans le fichier conf.py)'
+release = tmconfig.release
 
 
 # -- General configuration ---------------------------------------------------
@@ -64,7 +67,7 @@ html_theme = "sphinx_book_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_title = 'Titre du TM (modifier dans conf.py, html_title)'
+html_title = tmconfig.title
 html_logo = 'logo.png'
 html_favicon = 'favicon.png'
 
@@ -72,8 +75,8 @@ html_theme_options = {
   "home_page_in_toc": True,
   "use_download_button": True,
   "show_navbar_depth": 1,
-  "repository_url": "https://github.com/{your-docs-url}",
-  "use_issues_button": True,
+  "repository_url": tmconfig.repository_url,
+  # "use_issues_button": True,
   "use_edit_page_button": True,
 }
 
@@ -82,32 +85,43 @@ html_theme_options = {
 myst_enable_extensions = ["colon_fence"]
 
 
-######### Configure XLOGO lexer
-import re
+# -- Options for LaTeX output ---------------------------------------------
 
-from pygments.lexer import RegexLexer, words, include
-from pygments.token import Keyword
-from pygments import token
-from sphinx.highlighting import lexers
+latex_elements = {
+   'papersize':"a4",
+   'author': "<auteur>",
+   'date': tmconfig.date(),
+   'title': tmconfig.title,
+   'release' : tmconfig.release,
+   'releasename' : "Collège du sud, Travail de maturité",
+   'fontpkg': '\\usepackage{times}',
+   'babel': '\\usepackage[francais]{babel}',
+}
 
-class LogoLexer(RegexLexer):
-    name = 'Logo'
-    aliases = ['xlogo', 'logo', 'lgo']
-    filenames = ['*.lgo']
-    mimetypes = ['application/x-logo', 'text/x-logo']
-    flags = re.MULTILINE | re.UNICODE
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+latex_documents = [
+  ('index', 'tm-ecrit.tex', tmconfig.title,
+   tmconfig.author, 'manual'),
+]
 
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+#latex_logo = None
 
-    tokens = {
-        'root': [
-            include('keywords')
-        ],
-        'keywords': [
-            (words((
-                'to','end','wait','stop','stopall','repeat','if','while'), suffix=r'\b'),
-             Keyword),
-            (words(('pi','e','black','green','yellow','blue','magenta','cyan','white','gray','grey','lightgray','lightgrey','darkred','darkgreen','red','darkblue','orange','pink','purple','brown','true','false'), suffix=r'\b'), Keyword.Constant),
-        ]
-        }
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+#latex_use_parts = False
 
-lexers['Logo'] = LogoLexer(startinline=True)
+# If true, show page references after internal links.
+latex_show_pagerefs = True
+
+# If true, show URL addresses after external links.
+latex_show_urls = True
+
+# Documents to append as an appendix to all manuals.
+#latex_appendices = []
+
+# If false, no module index is generated.
+#latex_domain_indices = True
