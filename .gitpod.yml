@@ -1,0 +1,8 @@
+# Commands to start on workspace startup
+tasks:
+  - init: pip install -r requirements.txt
+    command: make livehtml
+# Ports to expose on workspace startup
+ports:
+  - port: 8000
+    onOpen: open-preview
