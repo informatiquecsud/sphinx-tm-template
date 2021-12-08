@@ -1,12 +1,22 @@
-# Introduction (version Markdown / MyST)
+..  _introduction:
 
-```{admonition} Information
-Ce chapitre d'introduction doit être complété avec les informations concernant le chapitre d'introduction au TM. 
-```
+Introduction
+############
 
-À compléter ... avec les informations concernant le chapitre d'introduction au TM. 
+..  admonition:: Information
 
-## Informations à inclure pour un TM de type "outil"
+    Ce chapitre d'introduction doit être complété avec les informations concernant le chapitre d'introduction au TM. 
+
+Informations à inclure pour un TM de type "outil"
+=================================================
+
+Sous-titre
+----------
+
+..  admonition:: Application du théorème de Pythagore
+    :class: tip
+
+    En raison du théorème de Pythagore, on peut établir la relation :math:`\sin^2(x) + \cos^2(x) = 1` pour tout :math:`x \in \mathbb{R}`.
 
 Si le TM est du type "outil d'enseignement", ce chapitre doit contenir les informations suivantes:
 
@@ -17,7 +27,8 @@ Si le TM est du type "outil d'enseignement", ce chapitre doit contenir les infor
 * Connaissances requises pour utiliser l'outil
 * Connaissances requises pour comprendre le fonctionnement de l'outil
 
-## Informations à inclure pour un TM de type "tutoriel"
+Informations à inclure pour un TM de type "tutoriel"
+====================================================
 
 Si le TM est du type "tutoriel", ce chapitre doit contenir les informations suivantes:
 
@@ -28,8 +39,5 @@ Si le TM est du type "tutoriel", ce chapitre doit contenir les informations suiv
 * Configuration matérielle requise pour compiler / utiliser le projet
 * Connaissances requises pour comprendre le projet 
 
-
-
-Ce chapitre doit présenter rapidement le projet, son intérêt, les technologies utilisées.
 
 

@@ -1,4 +1,4 @@
-# Description du projet
+# Insérer du code
 
 ```{admonition} Objectifs de cette page
 Cette page montre comment insérer du code Python, HTML ou Javascript dans la documentation.
@@ -64,8 +64,6 @@ def foo(a, b):
 
 Il est également possible d'inclure du code dans la documentation depuis un fichier externe, au lieu d'avoir à écrire copier le code directement dans le fichier `.md`.
 
-
-
-### Titre 2
+### Titre 2 
 
 #### Titre 3

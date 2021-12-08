@@ -7,13 +7,20 @@ Titre du travail de maturité
 ============================
 
 ..  toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Table des matières
 
     introduction.md
-    presentation-projet.md
     chapitre-01.md
     todo.rst
+
+..  toctree::
+    :maxdepth: 2
+    :caption: Tutoriel Sphinx
+
+    tutoriel-sphinx/index.rst
+
+
 
 
 Indices and tables
