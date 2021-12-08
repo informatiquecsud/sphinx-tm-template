@@ -12,6 +12,6 @@ Tutoriel Sphinx / MyST
     :maxdepth: 2
     :caption: Table des matières
 
-    comment-ca-marche.md
+    fonctionnement.md
     bases.md
     inserer-code.md
