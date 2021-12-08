@@ -15,3 +15,4 @@ Tutoriel Sphinx / MyST
     fonctionnement.md
     bases.md
     inserer-code.md
+    advanced-features.md

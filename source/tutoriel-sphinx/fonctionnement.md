@@ -1,15 +1,3 @@
-````{sidebar} Attention les vélos
-
-salut les amis
-
-Tout ceci permet donc d'écrire des choses dans la marge. C'est assez cool comme truc en fait. C'est en fait assez facile d'écrire des mathématiques
-
-```{math}
-
-f(x) = 2x^2 + 1
-```
-````
-
 # Fonctionnement de la toolchain Sphinx
 
 Avant de commencer, il faut comprendre le fonctionnement général de Sphinx. Il
@@ -47,7 +35,9 @@ Processus de génération du PDF avec Sphinx
 
 Par rapport à Word, Sphinx présente les avantages suivants
 
-- Sphinx est un outil Open-Source, ce qui signifie
+- Sphinx est un outil Open-Source, ce qui signifie qu'on peut l'adapter sans
+  problème à n'importe quel besoin. De plus, il n'y a aucun risque que le
+  système ne soit tout-à-coup plus supporté, car une importante communauté s'occupe de le faire évoluer et de corriger les bugs détectés.
 
 - On écrit de la documentation dans des fichiers qui ne contiennent que du
   texte, comme une sorte de "code source".
