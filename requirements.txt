@@ -17,6 +17,7 @@ mdit-py-plugins==0.2.8
 myst-parser==0.15.2
 packaging==21.3
 pydata-sphinx-theme==0.7.2
+pyenchant==3.2.2
 Pygments==2.10.0
 pyparsing==3.0.6
 pytz==2021.3
@@ -36,5 +37,6 @@ sphinxcontrib-htmlhelp==2.0.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
+sphinxcontrib-spelling==7.3.0
 tornado==6.1
 urllib3==1.26.7

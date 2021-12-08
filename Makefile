@@ -8,6 +8,8 @@ SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 
+PDFVIEWER = explorer.exe
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
@@ -24,3 +26,21 @@ livehtml:
 	
 surge:
 	surge build/html/ ini-prog.surge.sh
+
+		
+spelling:
+	@echo Serving pages on $(SPHINX_URL)
+	sphinx-build -b spelling -d build/doctrees   source $(BUILDDIR)/spelling
+
+view:
+	$(PDFVIEWER) ./build/latex/tm-ecrit.pdf
+
+tmpdf:
+	make latex
+	# curl https://gist.githubusercontent.com/donnerc/ceb6e0045d108f41e702/raw/sphinxmanual.cls > build/latex/sphinxmanual.cls
+	# curl
+	# https://gist.githubusercontent.com/donnerc/ceb6e0045d108f41e702/raw/Makefile
+	# > build/latex/Makefile
+	cp -f latex-templates/Makefile $(BUILDDIR)/latex
+	cp -f latex-templates/sphinxmanual.cls $(BUILDDIR)/latex
+	cd build/latex/ && make

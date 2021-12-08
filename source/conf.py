@@ -15,7 +15,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
-from tm_config import tmconfig
+from tmconfig import tmconfig
 
 
 # -- Project information -----------------------------------------------------
@@ -34,9 +34,10 @@ release = tmconfig.release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxcontrib.spelling',
     "myst_parser",
     'sphinx_copybutton',
-    'sphinx_design'
+    'sphinx_design',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -87,15 +88,30 @@ myst_enable_extensions = ["colon_fence"]
 
 # -- Options for LaTeX output ---------------------------------------------
 
+
 latex_elements = {
    'papersize':"a4",
-   'author': "<auteur>",
+   'author': tmconfig.author,
    'date': tmconfig.date(),
    'title': tmconfig.title,
    'release' : tmconfig.release,
    'releasename' : "Collège du sud, Travail de maturité",
    'fontpkg': '\\usepackage{times}',
    'babel': '\\usepackage[francais]{babel}',
+   'preamble': r'''
+%\usepackage[titles]{tocloft}
+%\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+%\setlength{\cftchapnumwidth}{0.75cm}
+%\setlength{\cftsecindent}{\cftchapnumwidth}
+%\setlength{\cftsecnumwidth}{1.25cm}
+\newcommand{\seminarytitle}{<<seminary_title>>}
+\newcommand{\customizeinfos}{<<customize_infos>>}
+'''.replace(
+  '<<seminary_title>>', tmconfig.seminary_title
+)
+.replace(
+  '<<customize_infos>>', r'Modifiez les informations de cette page dans le fichier {\verb tsource/tmconfig.py}' if tmconfig.first_name == 'Prénom' else ''
+)
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
