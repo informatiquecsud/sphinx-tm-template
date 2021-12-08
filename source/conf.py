@@ -34,7 +34,6 @@ release = tmconfig.release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinxcontrib.spelling',
     "myst_parser",
     'sphinx_copybutton',
     'sphinx_design',

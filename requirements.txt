@@ -14,9 +14,9 @@ livereload==2.6.3
 markdown-it-py==1.1.0
 MarkupSafe==2.0.1
 mdit-py-plugins==0.2.8
-myst-parser==0.15.2
+myst-parser
 packaging==21.3
-pydata-sphinx-theme==0.7.2
+pydata-sphinx-theme
 pyenchant==3.2.2
 Pygments==2.10.0
 pyparsing==3.0.6
@@ -28,7 +28,7 @@ snowballstemmer==2.2.0
 soupsieve==2.3.1
 Sphinx==4.3.0
 sphinx-autobuild==2021.3.14
-sphinx-book-theme==0.1.7
+sphinx-book-theme
 sphinx-copybutton==0.4.0
 sphinx-design==0.0.13
 sphinxcontrib-applehelp==1.0.2
