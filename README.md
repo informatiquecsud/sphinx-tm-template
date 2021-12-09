@@ -60,6 +60,7 @@ make livehtml
 Pour pouvoir générer le PDF, il faut au préalable installer LaTeX sur le système. Sur un système Linux, il suffit de faire les commandes
 
 ```bash
+sudo apt update
 sudo apt-get install texlive-latex-extra texlive-lang-french texlive-fonts-recommended latexmk
 ```
 
