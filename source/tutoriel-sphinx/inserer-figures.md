@@ -5,7 +5,6 @@
 ```{figure} figures/make-html.png
 ---
 width: 100%
-align: right
 ---
 Une légende
 ```
@@ -13,6 +12,3 @@ Une légende
 
 ## Insérer un tableau
 
-| foo | bar |
-| --- | --- |
-| baz | bim |

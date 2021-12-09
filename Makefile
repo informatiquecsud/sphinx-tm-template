@@ -44,3 +44,6 @@ tmpdf:
 	cp -f latex-templates/Makefile $(BUILDDIR)/latex
 	cp -f latex-templates/sphinxmanual.cls $(BUILDDIR)/latex
 	cd build/latex/ && make
+
+getpdf:
+	cp -f build/latex/tm-ecrit.pdf .
