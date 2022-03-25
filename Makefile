@@ -33,7 +33,7 @@ spelling:
 	sphinx-build -b spelling -d build/doctrees   source $(BUILDDIR)/spelling
 
 view:
-	$(PDFVIEWER) ./build/latex/tm-ecrit.pdf
+	$(PDFVIEWER) tm-ecrit.pdf
 
 tmpdf:
 	make latex
@@ -44,6 +44,10 @@ tmpdf:
 	cp -f latex-templates/Makefile $(BUILDDIR)/latex
 	cp -f latex-templates/sphinxmanual.cls $(BUILDDIR)/latex
 	cd build/latex/ && make
+	#make latexpdf LATEXMKOPTS="-interaction=nonstopmode"
 
 getpdf:
 	cp -f build/latex/tm-ecrit.pdf .
+
+make viewpdf:
+	explorer build/latex/tm-ecrit.pdf

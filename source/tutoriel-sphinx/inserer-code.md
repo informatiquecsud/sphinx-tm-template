@@ -98,3 +98,13 @@ linenos: true
 ### Titre 2 
 
 #### Titre 3
+
+```{replite}
+---
+kernel: python
+theme: JupyterLab Light
+width: 100%
+height: 600px
+---
+print('Hello from a JupyterLite console!')}
+```

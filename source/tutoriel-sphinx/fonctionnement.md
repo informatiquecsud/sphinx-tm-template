@@ -31,6 +31,7 @@ width: 100%
 Processus de génération du PDF avec Sphinx
 ```
 
+
 ## Les avantages de Sphinx par rapport à Word
 
 Par rapport à Word, Sphinx présente les avantages suivants

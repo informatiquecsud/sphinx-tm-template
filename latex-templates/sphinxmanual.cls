@@ -60,19 +60,22 @@
     \begin{flushright}%
       \sphinxlogo
       \py@HeaderFamily
-      {\Huge \seminarytitle{} \par}
+      {\Huge \seminarytitle{} \par} 
       \vfill
       {\Huge \@title \par}
       {\itshape\LARGE \py@release \releaseinfo \par}
       \vfill
       {\LARGE
-        \begin{tabular}[t]{c}
-          \@author
+        \begin{tabular}[t]{r}
+          \@author \\
+          \theschool \\
+          \theworktype
         \end{tabular}\kern-\tabcolsep
         \par}
       \vfill\vfill
       {\large
-       \@date \par
+       %\@date \par
+       \thedate{} \par
        \vfill
        \py@authoraddress \par
       }%

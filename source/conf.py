@@ -25,7 +25,8 @@ author = tmconfig.author
 copyright = f'2021, {author}'
 
 # The full version, including alpha/beta/rc tags
-release = tmconfig.release
+release = "" if tmconfig.version_finale else "intermédiaire"
+releasename = "" if tmconfig.version_finale else "Version"
 
 
 # -- General configuration ---------------------------------------------------
@@ -34,10 +35,15 @@ release = tmconfig.release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'jupyterlite_sphinx',
     "myst_parser",
     'sphinx_copybutton',
     'sphinx_design',
+    'sphinxcontrib.bibtex'
 ]
+
+# Configure Bibtex
+bibtex_bibfiles = ['refs.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -87,30 +93,77 @@ myst_enable_extensions = ["colon_fence"]
 
 # -- Options for LaTeX output ---------------------------------------------
 
+def add_latex_command(command, latex_raw_string):
+    return '\\newcommand{\\' + command + r'}{' + latex_raw_string + '}\n'
+
+def maketitle():
+    return r'''
+        \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
+
+        \begin{titlepage}
+            \centering
+
+            \vspace*{40mm} %%% * is used to give space from top
+            \textbf{\Huge {Sphinx format for Latex and HTML}}
+
+            \vspace{0mm}
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[scale=0.3]{logo.jpg}
+            \end{figure}
+
+            \vspace{0mm}
+            \Large \textbf{{Meher Krishna Patel}}
+
+            \small Created on : Octorber, 2017
+
+            \vspace*{0mm}
+            \small  Last updated : \MonthYearFormat\today
+
+
+            %% \vfill adds at the bottom
+            \vfill
+            \small \textit{More documents are freely available at }{\href{http://pythondsp.readthedocs.io/en/latest/pythondsp/toc.html}{PythonDSP}}
+        \end{titlepage}
+
+        \clearpage
+        \pagenumbering{roman}
+        \tableofcontents
+        \listoffigures
+        \listoftables
+        \clearpage
+        \pagenumbering{arabic}
+
+    '''
+
 
 latex_elements = {
    'papersize':"a4",
    'author': tmconfig.author,
-   'date': tmconfig.date(),
    'title': tmconfig.title,
-   'release' : tmconfig.release,
-   'releasename' : "Collège du sud, Travail de maturité",
+   'release' : release,
+   'releasename' : releasename,
    'fontpkg': '\\usepackage{times}',
    'babel': '\\usepackage[francais]{babel}',
+   #'maketitle': maketitle(),
    'preamble': r'''
-%\usepackage[titles]{tocloft}
-%\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
-%\setlength{\cftchapnumwidth}{0.75cm}
-%\setlength{\cftsecindent}{\cftchapnumwidth}
-%\setlength{\cftsecnumwidth}{1.25cm}
-\newcommand{\seminarytitle}{<<seminary_title>>}
-\newcommand{\customizeinfos}{<<customize_infos>>}
-'''.replace(
-  '<<seminary_title>>', tmconfig.seminary_title
-)
-.replace(
-  '<<customize_infos>>', r'Modifiez les informations de cette page dans le fichier {\verb tsource/tmconfig.py}' if tmconfig.first_name == 'Prénom' else ''
-)
+        %\usepackage[titles]{tocloft}
+        %\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+        %\setlength{\cftchapnumwidth}{0.75cm}
+        %\setlength{\cftsecindent}{\cftchapnumwidth}
+        %\setlength{\cftsecnumwidth}{1.25cm}
+        \usepackage{filecontents}
+        \usepackage[breaklinks]{hyperref}
+        \makeatletter
+        \g@addto@macro\UrlBreaks{\do\-}
+        \g@addto@macro\UrlBreaks{\do\/}
+        \makeatother
+   ''' 
+    + add_latex_command('seminarytitle', tmconfig.seminary_title)
+    + add_latex_command('customizeinfos', r'Modifiez les informations de cette page dans le fichier {\verb tsource/tmconfig.py}' if tmconfig.first_name == 'Prénom' else '')
+    + add_latex_command('thedate', tmconfig.date())
+    + add_latex_command('theschool', tmconfig.school)
+    + add_latex_command('theworktype', tmconfig.worktype),
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
