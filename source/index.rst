@@ -23,21 +23,68 @@ Titre du travail de maturité
 
 
 
+..
+    Indices and tables
+    ==================
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
+    * :ref:`genindex`
+    * :ref:`search`
 
 ..
-    ..  rubric:: Books
+    https://tex.stackexchange.com/questions/44589/how-to-split-bibliography-for-different-sections
 
+..
+    ..  raw:: latex
+
+        \begin{filecontents}{sites.bib}
+        @misc{A01,
+        author = {Author, A.},
+        year = {2001},
+        title = {Alpha},
+        }
+        @misc{B02,
+        author = {Buthor, B.},
+        year = {2002},
+        title = {Bravo},
+        }
+        @misc{C03,
+        author = {Cuthor, C.},
+        year = {2003},
+        title = {Charlie},
+        }
+        \end{filecontents}
+
+        \addbibresource{sites.bib}
+
+        \nocite{*}
+        \printbibliography[title={Livres}]
+
+        \nocite{*}
+        \printbibliography[title={Articles}]
+
+..
     ..  bibliography:: refs.bib
 
         site1
         site2
 
+..  raw:: latex
+
+
+
+    \begin{sphinxthebibliography}{AMD88}
+
+    \subsection*{Sites Web}
+
+    \bibitem[AMD88]{index:id3}
+    \sphinxAtStartPar
+    AMD. Example website 2. \sphinxurl{file://wsl.localhost/Ubuntu20.04LTS/home/donnerc/dev/tm/sphinx-tm-template/tm-ecrit.pdf}, Décembre 1988. Consulté le 25 mars 2022.
+    \bibitem[Int88]{index:id2}
+    \sphinxAtStartPar
+    Intel. Example website. \sphinxurl{http://example.com}, Décembre 1988. Consulté le 25 mars 2022.
+    \end{sphinxthebibliography}
+
+..
     ..  rubric:: Articles
 
     ..  bibliography:: refs1.bib
@@ -45,7 +92,7 @@ Indices and tables
         site3
         site4
 
-    
+        
 ..
     ..  raw:: latex
 
