@@ -4,10 +4,10 @@ class TMConfig:
     first_name = 'Prénom'
     last_name = 'Nom'
     author = f'{first_name} {last_name}'
-    year = u'2021'
+    year = u'2022'
     month = u'Décembre'
-    seminary_title = u'Développement d’outils ou matériel d’enseignement de l’informatique'
-    tutor = u"Cédric Donner"
+    seminary_title = u'Développement Web'
+    tutor = u"Cédric Donner et Johan Jobin"
     release = "Version intermédiaire"
     repository_url = "https://github.com/{your-docs-url}"
 
