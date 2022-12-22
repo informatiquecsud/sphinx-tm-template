@@ -1,7 +1,7 @@
-# Introduction (version Markdown / MyST)
+# Introduction 
 
 ```{admonition} Information
-teeeeeeeeest Ce chapitre d'introduction doit être complété avec les informations concernant le chapitre d'introduction au TM. 
+Ce chapitre d'introduction doit être complété avec les informations concernant le chapitre d'introduction au TM. 
 ```
 
 À compléter ... avec les informations concernant le chapitre d'introduction au TM. 
@@ -32,4 +32,6 @@ Si le TM est du type "tutoriel", ce chapitre doit contenir les informations suiv
 
 Ce chapitre doit présenter rapidement le projet, son intérêt, les technologies utilisées.
 
+## Motivations
+JE SUIS MNOTIVE PARCE QUE ...
 
