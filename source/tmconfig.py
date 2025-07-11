@@ -9,7 +9,7 @@ class TMConfig:
     seminary_title = u'Développement Web'
     tutor = u"Cédric Donner et Johan Jobin"
     release = "Version intermédiaire"
-    repository_url = "https://github.com/{your-docs-url}"
+    repository_url = "https://github.com/githubuser/yourrepo"
 
     @classmethod
     def date(cls):
